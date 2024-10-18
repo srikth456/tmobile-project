@@ -4,9 +4,24 @@
       <img class="reading-list-item--cover" [src]="read.coverUrl" [title]="read.title" [alt]="read.title + ' from reading list'"/>
     </div>
     <div class="reading-list-item--details">
+      <div *ngIf="read.finished">
+        <div class="finish">Finished</div>
+        <span class="finishDate">Finished Date: {{ formatDate(read.finishedDate) }}</span>
+      </div>
       <strong class="reading-list-item--details--title">{{ read.title }}</strong>
       <div class="reading-list-item--details--author">
         {{ read.authors.join(',') }}
+      </div>
+      <div>      
+        <button
+        mat-flat-button
+        class="book-finish"
+          color="primary"
+          title="Mark As Finish"
+          [attr.aria-label]="'Finish ' + read.title + ' from reading list'"
+          (click)="finishFromReadingList(read)">
+      Mark As Finish
+        </button>
       </div>
     </div>
     <div>
