@@ -23,7 +23,7 @@ form {
 }
 
 .book--title {
-  color: $gray80;
+  color: $pink-dark;
   margin-bottom: $spacing-xs;
 }
 
@@ -58,7 +58,8 @@ form {
       bottom: 0;
       right: 0;
       background-color: $gray05;
-      color: $pink-dark;
+      background-color: $pink-dark;
+      color: $white; 
     }
   }
   button:disabled{
